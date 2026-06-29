@@ -29,5 +29,21 @@ public class Pedido {
 
     private Double valorTotal;
 
+    @GetMapping
+    public List<Pedido> buscar(
+            @RequestParam(required=false)
+            CanalPedido canalPedido){
 
+
+        if(canalPedido != null){
+
+            return repository
+                    .findByCanalPedido(canalPedido);
+
+        }
+
+
+        return repository.findAll();
+
+    }
 }

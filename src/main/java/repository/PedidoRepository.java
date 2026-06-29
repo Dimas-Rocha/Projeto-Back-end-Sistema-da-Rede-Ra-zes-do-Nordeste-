@@ -8,5 +8,8 @@ public interface PedidoRepository
     findByCanalPedido(
             CanalPedido canal);
 
-
+    List<Pedido>
+    findByCanalPedido(
+            CanalPedido canalPedido
+    );
 }
